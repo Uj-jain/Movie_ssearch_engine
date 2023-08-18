@@ -46,16 +46,18 @@ const Main = () => {
         <>
             <div className="header">
                 <nav>
-                    <ul>
-                        {
-                            arr.map((value, pos) => {
-                                return (
-                                    <li><a href="#" key={pos} name={value} onClick={(e) => { getData(e.target.name) }}>{value}</a></li>
-                                )
-                            })
-                        }
-
-                    </ul>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#" name="Popular" onClick={(e) => { getData(e.target.name) }} >Popular</a>
+                            <a class="dropdown-item" href="#" name="Theatre" onClick={(e) => { getData(e.target.name) }} >Theatre</a>
+                            <a class="dropdown-item" href="#" name="Kids" onClick={(e) => { getData(e.target.name) }} >Kids</a>
+                            <a class="dropdown-item" href="#" name="Drama" onClick={(e) => { getData(e.target.name) }} >Drama</a>
+                            <a class="dropdown-item" href="#" name="Comedie" onClick={(e) => { getData(e.target.name) }} >Comedie</a>
+                        </div>
+                    </div>
                 </nav>
                 <form>
                     <div className="search-btn">
